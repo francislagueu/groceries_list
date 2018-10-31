@@ -1,0 +1,9 @@
+{
+  "name": "grocery_list",
+  "version": "1.0.0",
+  "description": "Gracery list application",
+  "main": "app.ts",
+  "repository": "https://github.com/francislagueu/groceries_list.git",
+  "author": "Francis Lagueu",
+  "license": "MIT"
+}
