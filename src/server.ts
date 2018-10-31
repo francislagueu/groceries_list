@@ -1,10 +1,12 @@
 import * as express from 'express';
-import { NotFoundError, ErrorHandler } from './middlewares/errors.middleware';
+import {Middleware} from './middlewares/index';
 import {router as GroceryRoutes} from './routes/grocery.routes';
+import { NotFoundError, ErrorHandler } from './middlewares/errors.middleware';
 
 const app = express();
 const port = process.env.PORT;
 
+Middleware(app);
 app.use('/api/groceries', GroceryRoutes);
 
 app.use(NotFoundError);
