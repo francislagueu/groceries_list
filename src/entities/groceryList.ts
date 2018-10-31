@@ -1,4 +1,4 @@
-import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, JoinColumn, ManyToOne } from 'typeorm';
+import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, JoinColumn, ManyToOne, OneToMany } from 'typeorm';
 import { Item } from './item';
 
 @Entity('groceries')
@@ -11,7 +11,7 @@ export class GroceryList extends BaseEntity {
     created: string;
     @UpdateDateColumn({type: 'timestamp'})
     updated: string;
-    @ManyToOne(type => Item, {cascade: true})
+    @OneToMany(type => Item, item => item.grocery_list)
     @JoinColumn()
     items: Item[];
 }
