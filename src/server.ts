@@ -1,7 +1,7 @@
 import * as express from 'express';
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT;
 
 export const Server = async () => {
     app.listen(port);
