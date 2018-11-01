@@ -1,5 +1,6 @@
 import { Entity, BaseEntity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, JoinColumn, ManyToOne, OneToMany } from 'typeorm';
 import { Item } from './item';
+import { User } from './user';
 
 @Entity('groceries')
 export class GroceryList extends BaseEntity {
@@ -14,4 +15,7 @@ export class GroceryList extends BaseEntity {
     @OneToMany(type => Item, item => item.grocery_list)
     @JoinColumn()
     items: Item[];
+    @ManyToOne(type => User, user=> user.grocery_list)
+    user: User;
+    
 }
